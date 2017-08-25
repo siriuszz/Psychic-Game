@@ -6,14 +6,18 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 
+
+// Randomly choose a letter from the options array
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
 
     // Determine which key was pressed.
     var userGuess = event.key;
 
-    // Randomly choose a letter from the options array
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
     // Determine wins and count down guesses left
     if (userGuess === computerGuess) {
@@ -31,7 +35,7 @@ document.onkeyup = function(event) {
 
 
     // A loop to track user guesses
-    var letters = ""
+    var letters = "";
     var i;
 
 
@@ -39,12 +43,12 @@ document.onkeyup = function(event) {
         letters = userGuess;
     }
 
-    // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+    // Create a variable to hold new HTML
     var html =
         "<p>Wins: " + wins + "</p>" +
         "<p>Losses: " + losses + "</p>" +
         "<p>Guesses left: " + guessesLeft + "</p>" +
-        "<p>Your guesses so far: " + letters +  "</p>";
+        "<p>Your guesses so far: " + letters[i] + "</p>";
 
     // Set the inner HTML contents of the #game div to our html string
     document.querySelector("#game").innerHTML = html;
