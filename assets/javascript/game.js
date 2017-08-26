@@ -17,12 +17,11 @@ document.onkeyup = function(event) {
     // Determine which key was pressed.
     var userGuess = event.key;
 
-
-
     // Determine wins and count down guesses left
     if (userGuess === computerGuess) {
         wins++;
         guessesLeft = 9;
+        return
     } else {
         guessesLeft--
     }
@@ -36,7 +35,6 @@ document.onkeyup = function(event) {
 
     // A loop to track user guesses
     var letters = "";
-    var i;
 
 
     for (i = 10; i > 0; i--) {
