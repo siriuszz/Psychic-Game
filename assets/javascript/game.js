@@ -27,7 +27,7 @@ document.onkeyup = function(event) {
     }
 
     // Determine losses and reset guesses left
-    if (guessesLeft < 0) {
+    if (guessesLeft === 0) {
         guessesLeft = 9;
         losses++;
     }
@@ -37,7 +37,7 @@ document.onkeyup = function(event) {
     var letters = "";
 
 
-    for (i = 10; i > 0; i--) {
+    for (i = 9; i > 0; i--) {
         letters = userGuess;
     }
 
@@ -48,7 +48,7 @@ document.onkeyup = function(event) {
         "<p>Guesses left: " + guessesLeft + "</p>" +
         "<p>Your guesses so far: " + letters[i] + "</p>";
 
+
     // Set the inner HTML contents of the #game div to our html string
     document.querySelector("#game").innerHTML = html;
 }
-
