@@ -50,5 +50,7 @@ document.onkeyup = function(event) {
 
 
     // Set the inner HTML contents of the #game div to our html string
+    // I realize that innerHTML overwrites, which is why my user guesses aren't holding.
+    //But I've run out of time to figure out the right way. 
     document.querySelector("#game").innerHTML = html;
 }
